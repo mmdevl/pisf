@@ -1,0 +1,19 @@
+[pisf]
+# imap server and credentials
+IMAP_SERVER   = imap.example.com
+IMAP_USERNAME = me@example.com
+IMAP_PASSWORD = password#123
+
+# spamassassin commands with options
+SA_CHECK = sa-check_spamd
+SA_SPAMC = spamc -E -c -s 20971520
+
+# mailbox and messages to check
+MAILBOX_TO_CHECK = INBOX
+MESSAGES_TO_CHECK = UNSEEN
+CHECK_FREQUENCY = 20
+
+# spam settings
+SPAM_FLAG = X-Spam-Flag
+SPAM_VALUE = YES
+SPAM_MAILBOX = Spams
