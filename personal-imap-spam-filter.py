@@ -12,7 +12,7 @@ import os
 # open config file
 config = ConfigParser()
 try:
-    config.read(os.path.splitext((__file__))[0] + ".conf")
+    config.read(os.path.dirname((__file__)) + "/pisf.conf")
 except:
     sys.exit('Problem reading config file')
 
@@ -64,7 +64,10 @@ def process_emails():
                         email_content = raw_message.decode("utf-8")
                     except:
                         email_content = False
-                    msg = message_from_bytes(raw_message)
+                    try:
+                        msg = message_from_bytes(raw_message)
+                    except:
+                        msg = False
                     print("  Date:    " + str(make_header(decode_header(msg['Date']))))
                     print("  From:    " + str(make_header(decode_header(msg['From']))))
                     print("  Subject: " + str(make_header(decode_header(msg['Subject'].replace('\r\n', '')))))

@@ -38,7 +38,7 @@ pip install -r /scratch/pisf/requirements.txt
 
 ```bash
 cd /scratch/pisf
-cp -p personal-imap-spam-filter.conf-dist personal-imap-spam-filter.conf
+cp -p pisf.conf-dist pisf.conf
 ```
 
 and personalise at least the "IMAP" stuff.

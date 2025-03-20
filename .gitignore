@@ -2,5 +2,5 @@
 bin
 lib
 lib64
-personal-imap-spam-filter.conf
+pisf.conf
 pyvenv.cfg
