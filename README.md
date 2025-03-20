@@ -58,3 +58,10 @@ For macOS (just for testing):
 /scratch/pisf/bin/python /scratch/pisf/personal-imap-spam-filter.py
 ```
 
+## Cronjob
+
+Add the following cronjob:
+
+```
+@daily          /scratch/pisf/bin/python /scratch/pisf/learn-imap-spam.py
+```

@@ -7,11 +7,15 @@ IMAP_PASSWORD = password#123
 # spamassassin commands with options
 SA_CHECK = sa-check_spamd
 SA_SPAMC = spamc -E -c -s 20971520
+SA_LEARN = sa-learn
 
 # mailbox and messages to check
 MAILBOX_TO_CHECK = INBOX
 MESSAGES_TO_CHECK = UNSEEN
 CHECK_FREQUENCY = 20
+# learn
+SPAMBOX_TO_CHECK = Junk
+SPAM_TO_CHECK = ALL
 
 # spam settings
 SPAM_FLAG = X-Spam-Flag
