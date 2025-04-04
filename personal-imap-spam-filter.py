@@ -6,6 +6,7 @@ from email.header import Header, decode_header, make_header
 from email import message_from_bytes
 import subprocess
 import time
+from datetime import datetime
 import sys
 import os
 
@@ -58,7 +59,7 @@ def process_emails():
                     if msgid in last_msgids:
                         continue
 
-                    print("Checking e-mail with msgid = " + str(msgid) + "...")
+                    print(datetime.now().strftime("%Y-%m-%d %H:%M:%S") + " check e-mail with msgid = " + str(msgid))
                     raw_message = client.fetch([msgid], ["RFC822"])[msgid][b"RFC822"]
                     try:
                         email_content = raw_message.decode("utf-8")
@@ -67,7 +68,11 @@ def process_emails():
                     try:
                         msg = message_from_bytes(raw_message)
                     except:
-                        msg = False
+                        print("Problem running 'message_from_bytes' - here the 'raw_message'")
+                        print("--------------------------------------------------------------------------------")
+                        print(raw_message)
+                        print("--------------------------------------------------------------------------------")
+                        continue
                     print("  Date:    " + str(make_header(decode_header(msg['Date']))))
                     print("  From:    " + str(make_header(decode_header(msg['From']))))
                     print("  Subject: " + str(make_header(decode_header(msg['Subject'].replace('\r\n', '')))))
