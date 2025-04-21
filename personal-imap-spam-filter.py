@@ -89,12 +89,12 @@ def process_emails():
                     else:
                         [ sa_exit_code, sa_summary ] = run_spamc(email_content)
                         if sa_exit_code == 1:
-                            print("  => moved to " + SPAM_MAILBOX + " (" + sa_summary + ")")
+                            print("  => moved to " + SPAM_MAILBOX + " (" + sa_summary + ")\n")
                             client.move([msgid], SPAM_MAILBOX)
                         elif sa_exit_code == 0:
                             print("  => not recognized as spam (" + sa_summary + ")\n")
                         else:
-                            print("  => spamd exit code " + str(sa_exit_code))
+                            print("  => spamd exit code " + str(sa_exit_code)) + "\n"
 
                 last_msgids = current_msgids
                 sys.stdout.flush()
