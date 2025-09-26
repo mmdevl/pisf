@@ -28,7 +28,7 @@ spamd-5.34
 ## Installation
 
 ```bash
-git clone https://github.com/mmdevel/pisf /scratch/pisf
+git clone https://github.com/mmdevl/pisf /scratch/pisf
 python -m venv /scratch/pisf
 source /scratch/pisf/bin/activate
 pip install -r /scratch/pisf/requirements.txt
